@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Header.css";
 
-const Header = () => {
+const Header = ({search, searchAnime, animeResults, SetSearch}) => {
+  
+
   return (
     <>
       <div className="header__container">
@@ -34,13 +36,15 @@ const Header = () => {
           <div className="header__search">
             <h1 className="search__title">Browse Anime</h1>
             <div className="search__container">
-              <form className="no-submit" id="search__input">
+              <form className="no-submit" id="search__input" onSubmit={searchAnime}>
                 <input
                   className="no-submit"
                   type="search"
                   name="search"
                   id="search"
                   placeholder="Search..."
+                  value={search}
+                  onChange={e => SetSearch(e.target.value)}
                 />
               </form>
             </div>

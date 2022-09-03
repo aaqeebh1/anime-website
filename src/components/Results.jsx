@@ -1,7 +1,8 @@
 import React from "react";
-import './Results.css'
+import ResultCards from "./ResultCards";
+import "./Results.css";
 
-const Results = () => {
+const Results = ({ animeResults }) => {
   return (
     <div>
       <section id="results">
@@ -16,25 +17,21 @@ const Results = () => {
                 name="filter"
                 className="results__filter"
                 id="results__filter"
+                defaultValue={"Select"}
               >
-                <option value="" disabled selected>
-                  Select
-                </option>
                 <option value="LATEST">Latest</option>
                 <option value="TOP_RATED">Top Rated</option>
                 <option value="MOST_POPULAR">Most Popular</option>
               </select>
             </div>
-            <div className="results__wrapper" id="search__results"></div>
-            <div
-              className="results__loading--wrapper"
-              id="results__loading--wrapper"
-            >
-              <img
-                src="./assets/spinner.svg"
-                alt=""
-                className="loading__spinner"
-              />
+            <div className="results__wrapper" id="search__results">
+              {animeResults.map(anime => (
+                <ResultCards 
+                  anime={anime}
+                  key={anime.mal_id}
+                />
+              ))}
+              
             </div>
           </div>
         </div>
