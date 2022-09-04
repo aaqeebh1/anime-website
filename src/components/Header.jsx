@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import "./Header.css";
 
-const Header = ({search, searchAnime, animeResults, SetSearch}) => {
+const Header = ({search, searchAnime, SetSearch}) => {
+  
   
 
   return (
