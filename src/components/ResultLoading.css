@@ -1,0 +1,57 @@
+.result__card--skeleton{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    margin: 46px 0;
+    padding: 5px;
+    overflow: hidden;
+    border: 2px transparent;
+    border-radius: 15px;
+    margin-right: 10px;
+    text-align: left;
+    box-shadow: -3px 10px 14px 2px rgba(0, 0, 0, 0.51);
+}
+
+.img__skeleton{
+  display: flex;
+  width: 150px;
+  height: 230px;
+  margin: 8px auto;
+  padding-bottom: 4px;
+  background-color: #eee;
+}
+
+.anime__para--skeleton{
+    height: 10px;
+    width: 90%; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #eee;
+
+}
+.anime__para-mid--skeleton{
+    height: 10px;
+    width: 60%; 
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #eee;
+
+}
+.anime__para-short--skeleton{
+    height: 10px;
+    width: 30%; 
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: #eee;
+
+}
+
+.anime__title--skeleton{
+    height: 10px;
+    width: 90%;
+    margin-left: 20px;
+    background-color: #eee;
+
+}   
