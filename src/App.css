@@ -10,25 +10,22 @@
   box-sizing: border-box;
 }
 html {
-    scroll-behavior: auto;
-    max-width: 100%;
-    overflow-x: hidden;
-  }
-  
-  .container {
-    max-width: 100%;
-  }
-  
-  .row {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #000;
-  }
+  scroll-behavior: auto;
+  max-width: 100%;
+  overflow-x: hidden;
+}
 
-  
-  
+.container {
+  max-width: 100%;
+}
+
+.row {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
