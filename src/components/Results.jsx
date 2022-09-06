@@ -2,7 +2,8 @@ import React from "react";
 import ResultCards from "./ResultCards";
 import "./Results.css";
 
-const Results = ({ animeResults, topRated, mostPopular }) => {
+const Results = ({ animeResults, topRated, mostPopular, modalOpen }) => {
+  
   return (
     <div>
       <section id="results">
@@ -39,7 +40,7 @@ const Results = ({ animeResults, topRated, mostPopular }) => {
             )}
             <div className="results__wrapper" id="search__results">
               {animeResults.map((anime) => (
-                <ResultCards anime={anime} key={anime.mal_id} />
+                <ResultCards anime={anime}  key={anime.mal_id} modalOpen={modalOpen} />
               ))}
             </div>
           </div>
