@@ -15,6 +15,7 @@ const Results = ({animeResults, SetAnimeId}) => {
                     <div className="result__card" key={anime.mal_id} >
                         <img
                           src={anime.images.jpg.image_url}
+                          alt='anime img'
                           className="anime__img"
                         />
                       <div className="anime__card--title-wrapper">

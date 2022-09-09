@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route  } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, Navigate  } from 'react-router-dom';
 import Nav from './components/Nav';
 import Home from './pages/Home';
 import Results from './pages/Results';
@@ -13,7 +13,6 @@ function App() {
   const [animeId, SetAnimeId] = useState("");
 
   const base_url = "https://api.jikan.moe/v4";
-  
 
   const searchAnime = (event) => {
     event.preventDefault();
@@ -26,6 +25,7 @@ function App() {
   };
   
   const fetchAnime = async (query) => {
+    
     const { data } = await fetch(
       `${base_url}/anime?q=${query}&order_by=score&sort=desc`
       )
@@ -58,14 +58,14 @@ function App() {
     SetAnimeResults(data);
   };
 
-  console.log(animeId);
+  
  
 
 
   return (
     <Router>
     <div className='app'>
-      <Nav search={search} SetSearch={SetSearch} searchAnime={searchAnime}/>
+      <Nav search={search} SetSearch={SetSearch} searchAnime={searchAnime} animeResults={animeResults}/>
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/anime' element={<Results animeResults={animeResults}  key={animeResults.mal_id} SetAnimeId={SetAnimeId} />}/>

@@ -1,10 +1,18 @@
 import { Search } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import logo from "../assests/logo.jpg";
 import "./Nav.css";
 
-const Nav = ({SetSearch, search, searchAnime}) => {
+const Nav = ({SetSearch, search, searchAnime, animeResults}) => {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (animeResults){
+     navigate("/anime")   
+    }
+},[])
   return (
     <>
       <nav className="container">
@@ -15,7 +23,7 @@ const Nav = ({SetSearch, search, searchAnime}) => {
         <form
                 className="no-submit"
                 id="search__input"
-                onSubmit={searchAnime}
+                onSubmit={(searchAnime) }
               >
                 <input
                   className="no-submit"
