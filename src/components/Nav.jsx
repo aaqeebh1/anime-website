@@ -4,7 +4,7 @@ import React from "react";
 import logo from "../assests/logo.jpg";
 import "./Nav.css";
 
-const Nav = () => {
+const Nav = ({SetSearch, search, searchAnime}) => {
   return (
     <>
       <nav className="container">
@@ -12,12 +12,21 @@ const Nav = () => {
           <img src={logo} alt="" className="nav__logo" />
           <h1 className="nav__logo--title">Animeworld</h1>
         </div>
-        <div className="nav__search">
-          <input type="text" className="nav__search--input" />
-          <Button variant="contained" >
-            Send
-          </Button>
-        </div>
+        <form
+                className="no-submit"
+                id="search__input"
+                onSubmit={searchAnime}
+              >
+                <input
+                  className="no-submit"
+                  type="search"
+                  name="search"
+                  id="search"
+                  placeholder="Search..."
+                  value={search}
+                  onChange={(e) => SetSearch(e.target.value)}
+                />
+              </form>
       </nav>
     </>
   );
