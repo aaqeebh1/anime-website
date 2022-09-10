@@ -1,13 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './Results.css'
 import StarIcon from '@mui/icons-material/Star';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Results = ({animeResults, SetAnimeId}) => {
-    
+const Results = ({animeResults, SetAnimeId, search, resultsTitle}) => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (animeResults) {
+      navigate("/anime");
+    }
+  }, animeResults);
     
     return (
-        <div>
+        <div className='results__container'>
+              <h1 className='search__for--title'>{resultsTitle} </h1>
+            
             <div className="results__wrapper" id="search__results">
               {animeResults.map((anime) => 
                 (anime.title && anime.approved ? (

@@ -11,17 +11,18 @@ function App() {
   const [animeResults, SetAnimeResults] = useState([]);
   const [loadingState, SetLoadingState] = useState(false);
   const [animeId, SetAnimeId] = useState("");
+  const [resultsTitle, SetResultsTitle] = useState('')
 
   const base_url = "https://api.jikan.moe/v4";
 
-  const searchAnime = (event) => {
-    event.preventDefault();
+  const searchAnime = () => {
     // SetLoadingState(true);
     // setTimeout(() => {
     //   SetLoadingState(false);
     // }, 1000);
 
     fetchAnime(search);
+    SetResultsTitle(`Search results for: ${search}`)
   };
   
   const fetchAnime = async (query) => {
@@ -40,10 +41,11 @@ function App() {
     // setTimeout(() => {
     //   SetLoadingState(false);
     // }, 1000);
-    const { data } = await fetch(`${base_url}/top/anime?limit=6`)
+    const { data } = await fetch(`${base_url}/top/anime`)
       .then((data) => data.json())
       .catch((err) => console.log(err));
     SetAnimeResults(data);
+    SetResultsTitle('Top Anime :')
   };
   const mostPopular = async () => {
     // SetLoadingState(true);
@@ -67,8 +69,8 @@ function App() {
     <div className='app'>
       <Nav search={search} SetSearch={SetSearch} searchAnime={searchAnime} animeResults={animeResults}/>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/anime' element={<Results animeResults={animeResults}  key={animeResults.mal_id} SetAnimeId={SetAnimeId} />}/>
+        <Route path='/' exact element={<Home topRated={topRated}/>} />
+        <Route path='/anime' element={<Results animeResults={animeResults}  key={animeResults.mal_id} SetAnimeId={SetAnimeId} search={search} resultsTitle={resultsTitle}/>}/>
         <Route path='anime/:id' element={<AnimeInfo animeId={animeId} />}/>
       </Routes>
     </div>

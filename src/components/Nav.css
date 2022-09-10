@@ -1,58 +1,67 @@
-.container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 73px;
-    -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
-box-shadow: 0px 3px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+.nav__container {
+  margin: 0;
+  padding: 0;
+  height: 73px;
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    5px 5px 15px 5px rgba(0, 0, 0, 0);
+  box-shadow: 0px 6px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
 }
-.nav__logo{
-    object-fit: contain;
-    height: 50px;
+
+.nav__wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1280px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin: 10px auto;
+}
+.nav__logo {
+  object-fit: contain;
+  height: 50px;
 }
 
 .nav__logo--wrapper {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-
 form.no-submit {
-    width: 100%;
-    max-width: 500px;
-    align-items: center;
-    color: fff;
-    right: 0;
-    display: flex;
-    padding: 2px;
-    border: 1px solid #fff;
-    border-radius: 50px;
-    margin: 0 0;
-    overflow: hidden;
-  }
-  
-  input.no-submit {
-    border: 1px solid white;
-    width: 100%;
-    padding: 9px 4px 9px 4px;
-    background-size: 13px;
-    background-repeat: no-repeat;
-    background-position: 10px center;
-    border-radius: 50px;
-    overflow: hidden;
-  }
-  
-  input[type="search"] {
-    border: none;
-    margin: 0;
-    padding: 7px 8px 7px 30px;
-    font-size: 16px;
-    color: #fff;
-    border-radius: inherit;
-  }
-  
-  .input.no-submit:focus,
-  input[type="search"]:focus,
-  form.no-submit {
-    outline: none;
-  }
+  width: 100%;
+  max-width: 500px;
+  align-items: center;
+  color: fff;
+  right: 0;
+  display: flex;
+  padding: 2px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  margin: 0 0;
+  overflow: hidden;
+}
+
+input.no-submit {
+  border: 1px solid white;
+  width: 100%;
+  padding: 9px 4px 9px 4px;
+  background-size: 13px;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  border-radius: 50px;
+  overflow: hidden;
+}
+
+input[type="search"] {
+  border: none;
+  margin: 0;
+  padding: 7px 8px 7px 30px;
+  font-size: 16px;
+  color: #fff;
+  border-radius: inherit;
+}
+
+.input.no-submit:focus,
+input[type="search"]:focus,
+form.no-submit {
+  outline: none;
+}
