@@ -1,0 +1,46 @@
+.bold {
+    font-weight: bold;
+}
+.animeinfo__wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 1280px;
+    margin-top: 50px;
+}
+.animeinfo__info{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.animeinfo__title--wrapper{
+    display: flex;
+}
+
+
+.animeinfo__img{
+    object-fit: contain;
+    height: 346px;
+}
+
+.animeinfo__title{
+    color: #fff;
+    margin-left: 50px;
+    text-transform: capitalize;
+}
+
+.animeinfo__type{
+    color: #fff;
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+.animeinfo__synopsis--wrapper{
+    max-width: 1000px;
+    color: #fff;
+    margin-top: 30px;
+}
+
+.animeinfo__synopsis{
+    margin-bottom: 20px;
+}

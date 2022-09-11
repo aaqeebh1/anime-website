@@ -6,13 +6,13 @@ import logo from "../assests/logo.jpg";
 import "./Nav.css";
 
 const Nav = ({ SetSearch, search, searchAnime }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleSubmit = (event) => {
     event.preventDefault();
     searchAnime();
-    navigate('/anime')
-  }
-  
+    navigate("/anime");
+  };
+
   return (
     <>
       <nav className="nav__container">
@@ -21,7 +21,11 @@ const Nav = ({ SetSearch, search, searchAnime }) => {
             <img src={logo} alt="" className="nav__logo" />
             <h1 className="nav__logo--title">Animeworld</h1>
           </Link>
-          <form className="no-submit" id="search__input" onSubmit={handleSubmit}>
+          <form
+            className="no-submit"
+            id="search__input"
+            onSubmit={handleSubmit}
+          >
             <input
               className="no-submit"
               type="search"
