@@ -66,3 +66,30 @@ input[type="search"]:focus,
 form.no-submit {
   outline: none;
 }
+
+@media (max-width: 1280px) {
+  .nav__logo--wrapper{
+    margin-left: 20px;
+  }
+  form.no-submit {
+    margin-right: 20px;
+  }
+}
+
+
+@media (max-width: 767px) {
+  form.no-submit {
+    width: 300px
+  }
+}
+
+@media (max-width: 481px ) {
+  .nav__wrapper{
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 10px;
+  }
+  form.no-submit{
+    margin-top: 10px;
+  }
+}

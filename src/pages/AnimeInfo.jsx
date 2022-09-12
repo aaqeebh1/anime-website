@@ -30,8 +30,6 @@ const AnimeInfo = ({}) => {
             <></>
           ) : (
             <iframe
-              width="100%"
-              height="700"
               src={`https://www.youtube.com/embed/${animeInfoData?.trailer?.youtube_id}`}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -52,20 +50,20 @@ const AnimeInfo = ({}) => {
                 <p className="animeinfo__type">{animeInfoData?.type}</p>
               </div>
               {animeInfoData?.type === "TV" ? (
-                <p className="animeinfo__title">
+                <p className="animeinfo__para">
                   <span className="bold">Release :</span>{" "}
                   {animeInfoData?.season} {animeInfoData?.year}
                 </p>
               ) : (
-                <p className="animeinfo__title">
-                  Release : {animeInfoData?.aired?.string}
+                <p className="animeinfo__para">
+                  <span className="bold">Release :</span> {animeInfoData?.aired?.string}
                 </p>
               )}
-              <p className="animeinfo__title">
+              <p className="animeinfo__para">
                 <span className="bold">Genre :</span> {animeGenres}
               </p>
               {animeInfoData?.type === "TV" ? (
-                <p className="animeinfo__title">
+                <p className="animeinfo__para">
                   <span className="bold">Episodes :</span>{" "}
                   {animeInfoData?.episodes || "N/A"}
                 </p>
