@@ -27,8 +27,9 @@
 
 .home__title {
   background-color: transparent;
-  color: red;
+  color: rgb(14, 14, 14);
   text-transform: capitalize;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 .gridel-btn {
   display: flex;
@@ -42,8 +43,8 @@
   background-size: 18px;
   background-position: center;
   border: 1px solid DimGray;
+  border-radius: 50px;
   color: white;
-  /* text-shadow: 1px 1px 0px Purple, 2px 2px 0px Purple; */
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   margin: 20px;
   text-decoration: none;
@@ -77,4 +78,10 @@ i {
 
 a:hover i {
   transition: all 0.45s ease-in-out !important;
+}
+
+@media (max-width: 481px) {
+  .home__title{
+    text-align: center;
+  }
 }

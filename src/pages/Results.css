@@ -1,3 +1,4 @@
+
 .anime__img {
   max-width: 100%;
   height: auto;
@@ -8,22 +9,79 @@
   margin: 32px auto 0 auto;
   max-width: 1280px;
 }
-.search__for--title{
-    display: block;
-    margin-top: 20px;
-    margin-bottom: 20px;
+
+.anime__card--title {
+  color: #fff;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.search__for--title {
+  text-transform: capitalize;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding-left: 1.5rem;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+
+.result__card {
+  position: relative;
+}
+
+.anime__card--ranking {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0px;
+  background-color: rgba(43, 43, 43, 0.521);
+  border: 1px solid blue;
+  padding: 3px;
+  border-radius: 0.25rem;
+  color: #fff;
+  text-transform: capitalize;
+}
+
+.anime__card--ranking > svg {
+  background-color: transparent;
+  font-size: 15px;
+  margin-right: 3px;
 }
 
 .results__wrapper {
+  width: 100%;
   -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   border: 0 solid #e2e8f0;
   box-sizing: border-box;
-  margin: 0;
+  margin: 0 auto;
   display: grid;
   grid-gap: 1.5rem;
   gap: 1.5rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  padding: 1.5rem;
+}
+@media (max-width: 481px) {
+  .results__wrapper {
+    display: flex;
+    flex-direction: column;
+    
+    align-items: flex-start;
+    margin: 0 auto;
+  }
+  .result__card {
+    display: flex;
+    max-width: 225px;
+  }
+  .anime__card--title-wrapper{
+    max-width: 300px;
+    margin-left: 20px;
+  }
+  .anime__card--title{
+    width: 180px;
+    font-size: 20px;
+    color: #fff;
+  }
 }
 
 @media (min-width: 768px) {
@@ -36,5 +94,3 @@
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 }
-
-

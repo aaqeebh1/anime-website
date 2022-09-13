@@ -19,7 +19,7 @@ const Nav = ({ SetSearch, search, searchAnime }) => {
         <div className="nav__wrapper">
           <Link to={"/"} className="nav__logo--wrapper">
             <img src={logo} alt="" className="nav__logo" />
-            <h1 className="nav__logo--title">Animeworld</h1>
+            <h1 className="nav__logo--title">AnimeWorld</h1>
           </Link>
           <form
             className="no-submit"

@@ -61,6 +61,7 @@ function App() {
       .then((data) => data.json())
       .catch((err) => console.log(err));
     SetAnimeResults(data);
+    console.log(animeResults);
     SetResultsTitle("Upcoming Anime :");
   };
 

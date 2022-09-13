@@ -1,5 +1,4 @@
 .nav__container {
-  margin: 0;
   padding: 0;
   height: 73px;
   -webkit-box-shadow: 0px 10px 13px -7px #000000,
@@ -7,6 +6,7 @@
   box-shadow: 0px 6px 13px -7px #000000, 5px 5px 15px 5px rgba(0, 0, 0, 0);
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .nav__wrapper {
@@ -20,6 +20,8 @@
 .nav__logo {
   object-fit: contain;
   height: 50px;
+  margin-left: 20px;
+  margin-right: 10px;
 }
 
 .nav__logo--wrapper {
@@ -37,8 +39,8 @@ form.no-submit {
   padding: 2px;
   border: 1px solid #fff;
   border-radius: 50px;
-  margin: 0 0;
   overflow: hidden;
+  margin-right: 20px;
 }
 
 input.no-submit {
@@ -67,29 +69,28 @@ form.no-submit {
   outline: none;
 }
 
-@media (max-width: 1280px) {
-  .nav__logo--wrapper{
-    margin-left: 20px;
-  }
-  form.no-submit {
-    margin-right: 20px;
-  }
-}
-
-
 @media (max-width: 767px) {
   form.no-submit {
-    width: 300px
+    width: 300px;
   }
 }
 
-@media (max-width: 481px ) {
-  .nav__wrapper{
+@media (max-width: 481px) {
+  .nav__wrapper {
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 10px;
   }
-  form.no-submit{
+  .nav__container {
+    position: relative;
+    margin-bottom: 80px;
+  }
+  form.no-submit {
     margin-top: 10px;
+    padding-right: 0;
+    margin-right: 0px;
+  }
+  .nav__logo {
+    margin-left: 0;
   }
 }

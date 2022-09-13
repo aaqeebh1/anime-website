@@ -56,7 +56,8 @@ const AnimeInfo = ({}) => {
                 </p>
               ) : (
                 <p className="animeinfo__para">
-                  <span className="bold">Release :</span> {animeInfoData?.aired?.string}
+                  <span className="bold">Release :</span>{" "}
+                  {animeInfoData?.aired?.string}
                 </p>
               )}
               <p className="animeinfo__para">
@@ -73,7 +74,11 @@ const AnimeInfo = ({}) => {
             </div>
           </div>
           <div className="animeinfo__synopsis--wrapper">
-            <h2 className="animeinfo__synopsis">Synopsis</h2>
+            {animeInfoData?.synopsis ? (
+              <h2 className="animeinfo__synopsis">Synopsis</h2>
+            ) : (
+              <></>
+            )}
             <p>{animeInfoData?.synopsis}</p>
           </div>
         </div>
