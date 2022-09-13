@@ -11,6 +11,7 @@ import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Results from "./pages/Results";
 import AnimeInfo from "./pages/AnimeInfo";
+import app from "./firebase";
 
 function App() {
   const [search, SetSearch] = useState("");
