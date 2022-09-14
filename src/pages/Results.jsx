@@ -17,7 +17,7 @@ const Results = ({animeResults, SetAnimeId, resultsTitle}) => {
             <div className="results__wrapper" id="search__results">
               {animeResults.map((anime) => 
               (anime.title && anime.approved ? (
-                    <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id}  onClick={() => SetAnimeId(anime.mal_id)} >
+                    <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id}  onClick={() => SetAnimeId(anime.mal_id)} className='resultCard__wrapper' >
                     <div className="result__card" >
                         <img
                           src={anime.images.jpg.image_url}

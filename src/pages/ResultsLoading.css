@@ -5,20 +5,19 @@
 
 .img__loading {
   background-color: #000;
-  width: 227px;
-  height: 300px;
+  width: 225px;
+  height: 330px;
 }
 
 .textLoading,
 .textLoading2 {
   background-color: #000;
-
   height: 15px;
   margin-top: 10px;
 }
 
 .textLoading {
-  width: 227px;
+  width: 225px;
 }
 
 .textLoading2 {
