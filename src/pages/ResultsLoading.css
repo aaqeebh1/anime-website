@@ -46,6 +46,18 @@
     align-items: flex-start;
     margin: 0 auto;
   }
+  .card__wrapper{
+    display: flex;
+    margin-left: 10px;
+  }
+  .textLoading {
+    margin-left: 10px;
+    width: 200px;
+  }
+  .textLoading2 {
+    margin-left: 10px;
+    width: 123px;
+  }
 
 }
 @media (min-width: 768px) {
