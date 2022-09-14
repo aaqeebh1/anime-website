@@ -10,6 +10,7 @@ import {
 import Nav from "./components/Nav";
 import Home from "./pages/Home";
 import Results from "./pages/Results";
+import ResultsLoading from "./pages/ResultsLoading";
 import AnimeInfo from "./pages/AnimeInfo";
 import app from "./firebase";
 
@@ -23,10 +24,10 @@ function App() {
   const base_url = "https://api.jikan.moe/v4";
 
   const searchAnime = () => {
-    // SetLoadingState(true);
-    // setTimeout(() => {
-    //   SetLoadingState(false);
-    // }, 1000);
+    SetLoadingState(true);
+    setTimeout(() => {
+      SetLoadingState(false);
+    }, 1000);
 
     fetchAnime(search);
     SetResultsTitle(`Search results for: ${search}`);
@@ -43,10 +44,10 @@ function App() {
   };
 
   const topRated = async () => {
-    // SetLoadingState(true);
-    // setTimeout(() => {
-    //   SetLoadingState(false);
-    // }, 1000);
+    SetLoadingState(true);
+    setTimeout(() => {
+      SetLoadingState(false);
+    }, 1000);
     const { data } = await fetch(`${base_url}/top/anime`)
       .then((data) => data.json())
       .catch((err) => console.log(err));
@@ -54,10 +55,10 @@ function App() {
     SetResultsTitle("Top Anime :");
   };
   const upcomingAnime = async () => {
-    // SetLoadingState(true);
-    // setTimeout(() => {
-    //   SetLoadingState(false);
-    // }, 1000);
+    SetLoadingState(true);
+    setTimeout(() => {
+      SetLoadingState(false);
+    }, 1000);
     const { data } = await fetch(`${base_url}/seasons/upcoming`)
       .then((data) => data.json())
       .catch((err) => console.log(err));
@@ -81,17 +82,24 @@ function App() {
             exact
             element={<Home topRated={topRated} upcomingAnime={upcomingAnime} />}
           />
-          <Route
-            path="/anime"
-            element={
-              <Results
-                animeResults={animeResults}
-                SetAnimeId={SetAnimeId}
-                search={search}
-                resultsTitle={resultsTitle}
-              />
-            }
-          />
+          {loadingState ? (
+            <Route
+              path="/anime"
+              element={<ResultsLoading resultsTitle={resultsTitle} />}
+            />
+          ) : (
+            <Route
+              path="/anime"
+              element={
+                <Results
+                  animeResults={animeResults}
+                  SetAnimeId={SetAnimeId}
+                  search={search}
+                  resultsTitle={resultsTitle}
+                />
+              }
+            />
+          )}
           <Route path="anime/:id" element={<AnimeInfo animeId={animeId} />} />
         </Routes>
       </div>
