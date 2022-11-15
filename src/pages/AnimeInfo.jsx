@@ -22,6 +22,7 @@ const AnimeInfo = ({}) => {
     }
   }, [id]);
 
+
   return (
     <div>
       <div className="animeinfo__container">

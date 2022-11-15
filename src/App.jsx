@@ -63,7 +63,6 @@ function App() {
       .then((data) => data.json())
       .catch((err) => console.log(err));
     SetAnimeResults(data);
-    console.log(animeResults);
     SetResultsTitle("Upcoming Anime :");
   };
 
@@ -100,7 +99,7 @@ function App() {
               }
             />
           )}
-          <Route path="anime/:id" element={<AnimeInfo animeId={animeId} />} />
+          <Route path="anime/:id" element={<AnimeInfo  />} />
         </Routes>
       </div>
     </Router>
